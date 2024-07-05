@@ -83,8 +83,6 @@ keyboard_listener.start()
 def set_hand_cursor(event):
     root.config(cursor="hand2")
 
-# 监听鼠标在画布上的移动事件并设置鼠标指针为小手
-# canvas.bind("<Enter>", set_hand_cursor)
 
 # 获取当前鼠标位置并设置窗口初始位置
 mouse_controller = mouse.Controller()
