@@ -26,4 +26,5 @@ def response(flow: http.HTTPFlow) -> None:
         
         # 修改响应内容
         # 比如：将响应内容改为 "已修改的响应内容"
-        flow.response.status_code = 400
+        flow.response.status_code = 200
+        flow.response.text = "213"
