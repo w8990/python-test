@@ -1,3 +1,5 @@
+import time
+import os
 from mitmproxy import http
 from datetime import datetime
 
@@ -30,5 +32,11 @@ def response(flow: http.HTTPFlow) -> None:
     log_to_file(log_entry)
     
     # 打印日志到控制台，便于调试
-    print(f"拦截到响应，状态码: {flow.response.status_code}")
-
+    print(f"URL: {flow.request.pretty_url}")
+    print(f"发送: {flow.request.text}")
+    # print(f"内容: {flow.response.text}")
+    
+    # 延时5秒后清除屏幕
+    # time.sleep(5)
+    # # 清除屏幕 (适用于不同的操作系统)
+    # os.system('cls' if os.name == 'nt' else 'clear')
